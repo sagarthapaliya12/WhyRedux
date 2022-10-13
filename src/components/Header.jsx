@@ -1,4 +1,4 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import {
   AppBar,
@@ -10,14 +10,14 @@ import {
   Switch,
 } from '@mui/material';
 
-const Header = () => {
-  const [showContent, setShowContent] = useState(false);
+const Header = ({setToggle}) => {
+  // const [showContent, setShowContent] = useState(false);
 
   const handleSwitch = (e) => {
-    setShowContent(e.target.checked);
+    setToggle(e.target.checked);
   };
 
-  console.log('Show Content: ', showContent);
+  console.log('Show Content: ', setToggle);
 
   return (
     <AppBar color="secondary">
@@ -33,7 +33,7 @@ const Header = () => {
           <FormControlLabel
             control={
               <Switch
-                checked={showContent}
+                checked={setToggle}
                 onChange={handleSwitch}
                 sx={{ bgcolor: '#D7D7D7', borderRadius: '5px' }}
               />
@@ -43,6 +43,7 @@ const Header = () => {
         </Box>
       </Toolbar>
     </AppBar>
+
   );
 };
 
